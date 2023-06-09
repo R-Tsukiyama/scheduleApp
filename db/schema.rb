@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2023_06_07_063054) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
+    t.text "memo"
     t.date "start_date"
     t.date "end_date"
     t.boolean "all_day"

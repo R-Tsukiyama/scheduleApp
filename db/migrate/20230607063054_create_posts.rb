@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.date :start_date
       t.date :end_date
       t.boolean :all_day
+      t.text :memo
 
       t.timestamps
     end

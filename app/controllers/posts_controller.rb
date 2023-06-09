@@ -19,12 +19,22 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      flash[:notice] = "スケジュールID「#{@post.id}」の情報を更新しました"
+      redirect_to :post
+    else
+      flash.now[:failure] ="スケジュールID「#{@post.id}」の情報を更新できませんでした"
+      render "edit"
+    end
   end
 
   def destroy
@@ -40,7 +50,8 @@ class PostsController < ApplicationController
       :title,
       :start_date,
       :end_date,
-      :all_day
+      :all_day,
+      :memo
     )
   end
 end
