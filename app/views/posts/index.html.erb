@@ -34,7 +34,7 @@
           <td><%= post.updated_at.to_s(:datetime) %></td>
           <td><%= link_to "詳細", post %></td>
           <td><%= link_to "編集", [:edit, post] %></td>
-          <td><%= button_to "削除", post, method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" } } %></td>
+          <td><%= button_to "削除", post, method: :delete, data: {confirm: "本当に削除しますか？" } %></td>
         </tr>
       <% end %>
     <% else %>
