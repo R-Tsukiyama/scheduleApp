@@ -14,7 +14,7 @@ class PostsController < ApplicationController
       redirect_to posts_path
     else
       flash.now[:failure] = "スケジュールを作成できませんでした"
-      render :new
+      render "new"
     end
   end
 

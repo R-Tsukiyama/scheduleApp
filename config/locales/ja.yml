@@ -1,0 +1,19 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            title:
+              blank: "が空欄です。入力してください。"
+            start_date:
+              blank: "が空欄です。入力してください。"
+            end_date:
+              blank: "が空欄です。入力してください。"
+    models: 
+      post: "予定"
+    attributes:
+      post:
+        title: "タイトル"
+        start_date: "開始日"
+        end_date: "終了日"

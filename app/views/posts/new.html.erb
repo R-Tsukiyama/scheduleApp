@@ -1,4 +1,11 @@
+<% if flash.now[:failure] %>
+   <p class="failure"><%= flash[:failure] %></p>
+<% end %>
+
 <h2>スケジュールを作成する</h2>
+
+<%= render 'shared/error', obj: @post %>
+
 <%= form_with model: @post, local: true do |f| %>
   <table>
     <tr>
