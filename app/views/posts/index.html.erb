@@ -1,0 +1,46 @@
+<% if flash[:success] %>
+  <p class="notice"><%= flash[:success] %></p>
+<% end %>
+
+<% if flash[:failure] %>
+  <p class="failure"><%= flash[:failure] %></p>
+<% end %>
+
+<h3>スケジュール一覧</h3>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>タイトル</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>終日</th>
+      <th>更新日時</th>
+      <th>詳細</th>
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @posts.count > 0 %>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.id %></td>
+          <td><%= post.title %></td>
+          <td><%= post.start_date.to_s(:yeardate) %></td>
+          <td><%= post.end_date.to_s(:yeardate) %></td>
+          <td><% if post.all_day %><strong>○</strong><% end %></td>
+          <td><%= post.updated_at.to_s(:datetime) %></td>
+          <td><%= link_to "詳細", post %></td>
+          <td><%= link_to "編集", [:edit, post] %></td>
+          <td><%= button_to "削除", post, method: :delete, class: "button", data: {confirm: "本当に削除しますか？" } %></td>
+        </tr>
+      <% end %>
+    <% else %>
+      <td colspan="9">現在登録しているスケジュールはありません</td>
+      <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to "新規スケジュールを作成する", :new_post %></p>

@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        post:
+          attributes:
+            memo:
+              too_long: "は500字以内で記述してください。"
+            title:
+              blank: "が空欄です。入力してください。"
+              too_long: "は20字以内で記述してください。"
+            start_date:
+              blank: "が空欄です。入力してください。"
+            end_date:
+              blank: "が空欄です。入力してください。"
+    models: 
+      post: "予定"
+    attributes:
+      post:
+        memo: "スケジュールメモ"
+        title: "タイトル"
+        start_date: "開始日"
+        end_date: "終了日"
